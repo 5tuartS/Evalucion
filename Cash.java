@@ -2,54 +2,59 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package order;
-
+package orden;
 /**
  *
  * @author ameli
  */
-public class Cash extends Payment {
-    private double cashAmount;
-    private double deduction;
+public class Efectivo extends Pago {
+    private double montoEfectivo; // Monto en efectivo
+    private double deduccion; // Deducción aplicada al monto
 
-    public Cash(double cashAmount, double deduction) {
-        this.cashAmount = cashAmount;
-        this.deduction = deduction;
+    //Constructor de la clase Efectivo.
+
+    public Efectivo(double montoEfectivo, double deduccion) {
+        this.montoEfectivo = montoEfectivo;
+        this.deduccion = deduccion;
     }
+
+    // Calcula el monto total, restando la deducción del monto en efectivo.
 
     @Override
-    public double calculateTotalAmount() {
-        System.out.println("Estoy pagando con efectivo");
-        return cashAmount - deduction;
+    public double calcularMontoTotal() {
+        System.out.println("Estoy pagando en efectivo");
+        return montoEfectivo - deduccion;
     }
 
+    //Devuelve una representación en cadena del pago en efectivo.
     @Override
     public String toString() {
-        return "Cash: Amount = " + cashAmount + ", Deduction = " + deduction;
+        return "Efectivo: Monto = " + montoEfectivo + ", Deducción = " + deduccion;
     }
 
-    public double getCashAmount() {
-        return cashAmount;
+    // Getters y setters
+
+    public double getMontoEfectivo() {
+        return montoEfectivo;
     }
 
-    public void setCashAmount(double cashAmount) {
-        this.cashAmount = cashAmount;
+    public void setMontoEfectivo(double montoEfectivo) {
+        this.montoEfectivo = montoEfectivo;
     }
 
-    public double getDeduction() {
-        return deduction;
+    public double getDeduccion() {
+        return deduccion;
     }
 
-    public void setDeduction(double deduction) {
-        this.deduction = deduction;
+    public void setDeduccion(double deduccion) {
+        this.deduccion = deduccion;
     }
 
-    public double getAmount() {
-        return amount;
+    public double getMonto() {
+        return monto;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setMonto(double monto) {
+        this.monto = monto;
     }
-    
 }
